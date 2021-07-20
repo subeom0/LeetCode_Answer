@@ -1,3 +1,5 @@
+# 다익스트라 알고리즘 인터넷에서 검색해보시길 바랍니다.
+
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         graph = collections.defaultdict(list)
