@@ -1,19 +1,19 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         res = []
-        prev = []
+        part = []
         
-        def dfs(num):
-            if len(num) == 0:
+        def dfs(perm):
+            if len(perm) == 0:
                 res.append(prev[:])
                 
-            for i in num:
-                _next = num[:]
-                _next.remove(i)
+            for i in perm:
+                tmp = perm[:]
+                tmp.remove(i)
                 
-                prev.append(i)
-                dfs(_next)
-                prev.pop()
+                part.append(i)
+                dfs(tmp)
+                part.pop()
                 
         dfs(nums)
         return res
